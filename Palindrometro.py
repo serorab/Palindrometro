@@ -14,7 +14,7 @@ entrada.pack(pady=20)
 
 texto = ""
 
-#Función que determinará cuál frase es palíndromo y cuál no.
+#Función que mostrará cuál frase es palíndromo y cuál no.
 def juego():
 	frase = entrada.get()
 	if frase == '':
