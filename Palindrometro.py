@@ -3,9 +3,9 @@ import tkinter as tk
 
 #Se crea la ventana Principal
 ventana = tk.Tk()
-ventana.geometry("300x200")
+ventana.geometry("350x220")
 ventana.title('Palindrómetro')
-mensaje = tk.Label(ventana, text='Pon una frase y te diré si es o no Palíndromo')
+mensaje = tk.Label(ventana, text='Pon una frase y te diré si es o no Palíndromo', font=2)
 mensaje.pack()
 
 #Se crea el cuádro o espacio en donde el usuario ingresará la frase
@@ -16,18 +16,18 @@ entrada.pack(pady=20)
 def juego():
 	frase = entrada.get()
 	if frase == '':
-		mensajeSalida.config(text='El campo está vacío')
+		mensajeSalida.config(text='El campo está vacío', font=1)
 		mensajeFinal.config(text='')
 
 	elif esPalindromo(frase):
-		mensajeSalida.config(text=f'La frase "{frase}", Es palíndromo')
+		mensajeSalida.config(text=f'La frase "{frase}", Es palíndromo', font=1)
 		entrada.delete(0, tk.END)
 		mensajeFinal.config(text='¡Gracias por jugar!')
 
 	else:
-		mensajeSalida.config(text=f'La frase "{frase}", No es palíndromo')
+		mensajeSalida.config(text=f'La frase "{frase}", No es palíndromo', font=1)
 		entrada.delete(0, tk.END)
-		mensajeFinal.config(text='¡Gracias por jugar!')
+		mensajeFinal.config(text='¡Gracias por jugar!', font=1)
 
 #Función que invierte la frase ingresada y la compara consigo misma.
 def esPalindromo (texto):
@@ -40,7 +40,7 @@ def esPalindromo (texto):
 		return False
 
 #Botón que inicia la tarea
-botonFrase = tk.Button(ventana, text='¡Haz click acá!', bg='#71d772', command=juego)
+botonFrase = tk.Button(ventana, text='¡Haz click acá!', font=2, bg='#71d772', command=juego)
 botonFrase.pack(pady=5)
 
 #Mensaje de salida dentro de la ventana.
