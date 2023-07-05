@@ -12,6 +12,8 @@ mensaje.pack()
 entrada = tk.Entry(ventana)
 entrada.pack(pady=20)
 
+texto = ""
+
 #Función que determinará cuál frase es palíndromo y cuál no.
 def juego():
 	frase = entrada.get()
@@ -22,20 +24,21 @@ def juego():
 	elif esPalindromo(frase):
 		mensajeSalida.config(text=f'La frase "{frase}", Es palíndromo', font=1)
 		entrada.delete(0, tk.END)
-		mensajeFinal.config(text='¡Gracias por jugar!')
+		texto = '¡Gracias por Jugar!'
+		mensajeFinal.config(text=texto, font=1)
 
 	else:
 		mensajeSalida.config(text=f'La frase "{frase}", No es palíndromo', font=1)
 		entrada.delete(0, tk.END)
-		mensajeFinal.config(text='¡Gracias por jugar!', font=1)
+		texto = '¡Gracias por Jugar!'
+		mensajeFinal.config(text=texto, font=1)
 
 #Función que invierte la frase ingresada y la compara consigo misma.
 def esPalindromo (texto):
-	sinEspacio = texto
-	nuevoTexto = sinEspacio.replace(" ", "")
-	fInv = nuevoTexto[:: -1]
+	sinEspacio = texto.replace(" ", "")
+	fInv = sinEspacio[:: -1]
 
-	if nuevoTexto.lower() == fInv.lower():
+	if sinEspacio.lower() == fInv.lower():
 		return True
 
 	else: 
