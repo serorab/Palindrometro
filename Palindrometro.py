@@ -31,9 +31,11 @@ def juego():
 
 #Función que invierte la frase ingresada y la compara consigo misma.
 def esPalindromo (texto):
-	fInv = texto[:: -1]
+	sinEspacio = texto
+	nuevoTexto = sinEspacio.replace(" ", "")
+	fInv = nuevoTexto[:: -1]
 
-	if texto == fInv:
+	if nuevoTexto.lower() == fInv.lower():
 		return True
 
 	else: 
