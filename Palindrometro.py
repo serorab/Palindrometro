@@ -3,7 +3,7 @@ import tkinter as tk
 
 #Se crea la ventana Principal
 ventana = tk.Tk()
-ventana.geometry("350x220")
+ventana.geometry("420x220")
 ventana.title('Palindrómetro')
 mensaje = tk.Label(ventana, text='Pon una frase y te diré si es o no Palíndromo', font=2)
 mensaje.pack()
